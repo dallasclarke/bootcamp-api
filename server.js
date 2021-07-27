@@ -7,6 +7,7 @@ dotenv.config({
 });
 
 const bootcamps = require("./routes/bootcamps");
+const auth = require("./routes/auth");
 const errorHandler = require("./middleware/error");
 
 connectDB();
@@ -20,6 +21,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 app.use("/api/v1/bootcamps", bootcamps);
+app.use("/api/v1/auth", auth);
 
 app.use(errorHandler);
 
